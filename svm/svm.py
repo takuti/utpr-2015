@@ -48,13 +48,13 @@ def generate_data(d, n):
   # return d x n matrix
   # each element will be in [0, 1]
   # label is -1 or 1
-  x = np.array([np.random.random(n) for i in range(d)])
-  x = 2 * x - np.ones((d, n))
-  l = 2 * ((2 * x[0, :] + x[1, :]) > .5) - 1
-  flip = abs((2 * x[0, :] + x[1, :]) - 0.5) < 0.2
+  X = np.array([np.random.random(n) for i in range(d)])
+  X = 2 * X - np.ones((d, n))
+  l = 2 * ((2 * X[0, :] + X[1, :]) > .5) - 1
+  flip = abs((2 * X[0, :] + X[1, :]) - 0.5) < 0.2
   for i in range(n):
     if flip[i]: l[i] = -l[i]
-  return l, x
+  return l, X
 
 if __name__ == '__main__':
 
