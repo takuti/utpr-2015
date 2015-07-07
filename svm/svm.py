@@ -9,6 +9,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 N = 100
 C = 0.5
+sigma = 0.3
 
 def plot_save(l, X, alpha, b, filename):
   fig = plt.figure()
@@ -35,7 +36,7 @@ def plot_save(l, X, alpha, b, filename):
   plt.clf()
 
 def kernel(x, y):
-  return np.exp(-norm(x-y)**2 / (2 * (0.3 ** 2)))
+  return np.exp(-norm(x-y)**2 / (2 * (sigma ** 2)))
 
 def f(x, alpha, l, X, b):
   total = 0
